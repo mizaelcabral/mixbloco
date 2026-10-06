@@ -1,0 +1,6 @@
+{
+  "name": "Mixbloco - Soluções em Pré-Moldados",
+  "description": "Mixbloco - Fabricação e fornecimento de pavers e soluções em artefatos de cimento e pré-moldados com o melhor atendimento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
