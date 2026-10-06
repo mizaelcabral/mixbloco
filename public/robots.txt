@@ -1,0 +1,32 @@
+# Robots.txt for Mixbloco
+User-agent: *
+Allow: /
+
+# Explicitly allow AI and LLM Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemaps and LLM Documentation
+Sitemap: https://mixbloco.com.br/sitemap.xml
+# LLM Knowledge File: https://mixbloco.com.br/llms.txt
