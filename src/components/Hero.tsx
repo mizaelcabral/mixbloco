@@ -164,7 +164,7 @@ export function Hero({ onOpenQuote, onNavigate }: HeroProps) {
       <div className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 py-16 md:py-24 max-w-7xl mx-auto">
         
         {/* Main Title: SOLUÇÕES EM PRÉ-MOLDADOS */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-black uppercase text-white tracking-tight leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] whitespace-nowrap">
+        <h1 className="text-[clamp(1.05rem,4.8vw,4.25rem)] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-black uppercase text-white tracking-tight sm:tracking-normal leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] whitespace-nowrap max-w-full">
           SOLUÇÕES EM PRÉ-MOLDADOS
         </h1>
 
