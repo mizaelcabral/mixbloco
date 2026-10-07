@@ -34,8 +34,22 @@ export function CalculatorSection({ onQuoteWithCalc }: CalculatorSectionProps) {
 
   return (
     <section id="projetos" className="py-20 bg-slate-900 text-white relative overflow-hidden">
-      {/* Decorative subtle texture */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#f48120_1px,transparent_1px)] [background-size:16px_16px]" />
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+      >
+        <source src="/video-background/video-background-mixbloco.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Slate-Navy Overlay for high contrast and readability */}
+      <div 
+        className="absolute inset-0 bg-[#0b1624]/88 backdrop-blur-[1px] pointer-events-none"
+        aria-hidden="true" 
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-12">
