@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Phone, Mail, MapPin, Send } from 'lucide-react';
-import { CLIENT_PRODUCTS } from './ProductsSection';
 
 export function ContactSection() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
-  const [produto, setProduto] = useState('PISO GRAMA 16 FACES 6CM');
+  const [assunto, setAssunto] = useState('Dúvidas Gerais');
   const [mensagem, setMensagem] = useState('');
   const [enviado, setEnviado] = useState(false);
 
@@ -14,13 +13,13 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const texto = `*SOLICITAÇÃO DE ORÇAMENTO - MIXBLOCO*\n\n` +
+    const texto = `*MENSAGEM VIA SITE - MIXBLOCO*\n\n` +
       `*Nome:* ${nome || 'Não informado'}\n` +
       `*Email:* ${email || 'Não informado'}\n` +
       `*Telefone:* ${telefone || 'Não informado'}\n` +
-      `*Produto:* ${produto}\n` +
-      (mensagem ? `*Mensagem:* ${mensagem}\n\n` : `\n`) +
-      `Olá, gostaria de receber uma cotação para o produto selecionado.`;
+      `*Assunto:* ${assunto}\n` +
+      `*Mensagem:* ${mensagem || 'Não informada'}\n\n` +
+      `Olá! Enviei esta mensagem pelo site da Mixbloco e aguardo o retorno.`;
 
     const encoded = encodeURIComponent(texto);
     window.open(`https://wa.me/5583988856056?text=${encoded}`, '_blank');
@@ -129,12 +128,12 @@ export function ContactSection() {
               
               {/* Form Title */}
               <h2 className="text-2xl sm:text-3xl font-black uppercase text-slate-950 tracking-tight">
-                ORÇAMENTO
+                ENVIE SUA MENSAGEM
               </h2>
 
               {/* Form Subtitle */}
               <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-lg">
-                Solicite seu orçamento conosco preenchendo as informações abaixo que em breve retornaremos.
+                Entre em contato conosco preenchendo as informações abaixo que em breve retornaremos.
               </p>
 
               {enviado ? (
@@ -143,10 +142,10 @@ export function ContactSection() {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900">
-                    Orçamento Iniciado com Sucesso!
+                    Mensagem Enviada com Sucesso!
                   </h3>
                   <p className="text-xs text-slate-600">
-                    Sua mensagem foi direcionada ao nosso WhatsApp comercial da unidade Cabedelo/PB. Responderemos em instantes.
+                    Sua mensagem foi direcionada ao nosso canal de atendimento da unidade Cabedelo/PB. Responderemos em instantes.
                   </p>
                   <button
                     type="button"
@@ -188,7 +187,7 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  {/* Row 2: Telefone and Produto */}
+                  {/* Row 2: Telefone and Assunto */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs text-slate-700 font-medium mb-1">
@@ -206,19 +205,20 @@ export function ContactSection() {
 
                     <div>
                       <label className="block text-xs text-slate-700 font-medium mb-1">
-                        Produto
+                        Assunto
                       </label>
                       <select
-                        value={produto}
-                        onChange={(e) => setProduto(e.target.value)}
+                        value={assunto}
+                        onChange={(e) => setAssunto(e.target.value)}
                         className="w-full bg-white/90 border border-slate-300 rounded px-3 py-2 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#f48120] focus:border-transparent shadow-2xs"
                       >
-                        <option value="PISO GRAMA 16 FACES 6CM">PISO GRAMA 16 FACES 6CM</option>
-                        {CLIENT_PRODUCTS.map((p) => (
-                          <option key={p.id} value={`${p.name} - ${p.dimensoes}`}>
-                            {p.name} - {p.dimensoes}
-                          </option>
-                        ))}
+                        <option value="Dúvidas Gerais">Dúvidas Gerais</option>
+                        <option value="Solicitação de Orçamento">Solicitação de Orçamento</option>
+                        <option value="Pisos Intertravados / Pavers">Pisos Intertravados / Pavers</option>
+                        <option value="Blocos de Concreto">Blocos de Concreto</option>
+                        <option value="Meio-Fio e Guias">Meio-Fio e Guias</option>
+                        <option value="Parcerias e Construtoras">Parcerias e Construtoras</option>
+                        <option value="Outros Assuntos">Outros Assuntos</option>
                       </select>
                     </div>
                   </div>
@@ -232,7 +232,8 @@ export function ContactSection() {
                       rows={3}
                       value={mensagem}
                       onChange={(e) => setMensagem(e.target.value)}
-                      placeholder="Descreva detalhes como metragem da obra ou prazo desejado..."
+                      required
+                      placeholder="Escreva sua mensagem, dúvida ou solicitação..."
                       className="w-full bg-white/90 border border-slate-300 rounded px-3.5 py-2 text-xs sm:text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#f48120] focus:border-transparent shadow-2xs"
                     />
                   </div>
@@ -243,7 +244,7 @@ export function ContactSection() {
                       type="submit"
                       className="w-full bg-[#f48120] hover:bg-[#e07217] active:scale-[0.99] text-white py-3 px-6 rounded-none font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer flex items-center justify-center gap-2"
                     >
-                      <span>ENVIAR ORÇAMENTO</span>
+                      <span>ENVIAR MENSAGEM</span>
                     </button>
                   </div>
                 </form>
