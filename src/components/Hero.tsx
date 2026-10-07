@@ -38,7 +38,7 @@ export function Hero({ onOpenQuote, onNavigate }: HeroProps) {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent("Olá! Vim através do site da Mixbloco e gostaria de solicitar um orçamento para soluções em pré-moldados.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5583986538607?text=${message}`, '_blank');
   };
 
   return (

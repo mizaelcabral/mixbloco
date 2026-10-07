@@ -79,7 +79,7 @@ export function QuoteModal({
       `Por favor, me informe valores, condições de frete e prazo de entrega.`;
 
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/5511999999999?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/5583986538607?text=${encoded}`, '_blank');
     setSubmitted(true);
   };
 

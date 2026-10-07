@@ -22,7 +22,7 @@ export function ContactSection() {
       `Olá! Enviei esta mensagem pelo site da Mixbloco e aguardo o retorno.`;
 
     const encoded = encodeURIComponent(texto);
-    window.open(`https://wa.me/5583988856056?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/5583986538607?text=${encoded}`, '_blank');
     setEnviado(true);
   };
 
@@ -84,12 +84,12 @@ export function ContactSection() {
                 </a>
                 <span className="text-slate-400"> / </span>
                 <a 
-                  href="https://wa.me/5583988856056" 
+                  href="https://wa.me/5583986538607" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[#f48120] font-semibold hover:underline"
                 >
-                  (83) 98885-6056
+                  (83) 98653-8607
                 </a>
               </p>
 

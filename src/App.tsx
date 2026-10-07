@@ -41,8 +41,8 @@ export default function App() {
   };
 
   const openWhatsAppFloating = () => {
-    const message = encodeURIComponent("Olá! Estou no site da Mixbloco e gostaria de atendimento.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    const message = encodeURIComponent("Olá! Estou no site da Mixbloco e gostaria de informações e atendimento para meu projeto.");
+    window.open(`https://wa.me/5583986538607?text=${message}`, '_blank');
   };
 
   return (

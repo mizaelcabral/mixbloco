@@ -15,7 +15,8 @@ export function Footer({ onOpenQuote }: FooterProps) {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/5583988856056", '_blank');
+    const message = encodeURIComponent("Olá! Estou no site da Mixbloco e gostaria de tirar dúvidas e solicitar atendimento.");
+    window.open(`https://wa.me/5583986538607?text=${message}`, '_blank');
   };
 
   return (
@@ -174,7 +175,7 @@ export function Footer({ onOpenQuote }: FooterProps) {
             </div>
             <div className="flex items-center gap-3 text-xs text-slate-400">
               <Phone className="w-4 h-4 text-[#f48120] shrink-0" />
-              <span>(83) 3268-5052 / (83) 98885-6056</span>
+              <span>(83) 3268-5052 / (83) 98653-8607</span>
             </div>
             <div className="flex items-center gap-3 text-xs text-slate-400">
               <Mail className="w-4 h-4 text-[#f48120] shrink-0" />
