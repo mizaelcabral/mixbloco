@@ -16,6 +16,14 @@ export interface ProductItem {
   featured?: boolean;
 }
 
+export const PRODUCT_COLOR_MAP: Record<string, { bg: string; label: string }> = {
+  "Grafite": { bg: "#374151", label: "Grafite" },
+  "Amarelo": { bg: "#d97706", label: "Amarelo" },
+  "Vermelho": { bg: "#b91c1c", label: "Vermelho" },
+  "Cinza natural": { bg: "#9ca3af", label: "Cinza natural" },
+  "Natural": { bg: "#9ca3af", label: "Natural" },
+};
+
 export const CLIENT_PRODUCTS: ProductItem[] = [
   // --- PISOS INTERTRAVADOS RETANGULARES (6 produtos) ---
   {
@@ -298,32 +306,60 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
 
         {/* Product Cards Grid - Formatação Exata que o Cliente Adora */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProducts.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* Product Visual Container (Identical grey photo backdrop from catalog) */}
-                <div className="relative h-56 overflow-hidden bg-slate-100 border-b border-slate-100">
-                  <ProductVisual 
-                    id={item.id}
-                    name={item.name}
-                    category={item.category}
-                    dimensoes={item.dimensoes}
-                  />
+          {filteredProducts.map((item) => {
+            const validColors = (item.cores || []).filter((c) => PRODUCT_COLOR_MAP[c]);
+            const hasColorVariation = validColors.length > 1;
 
-                  {/* Category Badge */}
-                  <div className="absolute top-3 left-3 z-10 bg-[#0f1d2e]/90 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-xs">
-                    {item.category}
-                  </div>
+            return (
+              <div
+                key={item.id}
+                className="group bg-white rounded-lg overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Product Visual Container (Identical grey photo backdrop from catalog) */}
+                  <div className="relative h-56 overflow-hidden bg-slate-100 border-b border-slate-100">
+                    <ProductVisual 
+                      id={item.id}
+                      name={item.name}
+                      category={item.category}
+                      dimensoes={item.dimensoes}
+                    />
 
-                  {/* Featured Badge */}
-                  {item.featured && (
-                    <div className="absolute top-3 right-3 z-10 bg-[#f48120] text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-sm">
-                      Destaque
+                    {/* Category Badge */}
+                    <div className="absolute top-3 left-3 z-10 bg-[#0f1d2e]/90 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-xs">
+                      {item.category}
                     </div>
-                  )}
+
+                    {/* Top Right: Color Swatches & Featured Badge */}
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
+                      {/* Color Swatch Tags (para produtos com variação de cores) */}
+                      {hasColorVariation && (
+                        <div 
+                          className="flex items-center gap-1.5 bg-white/95 backdrop-blur-xs p-1.5 rounded border border-slate-300/80 shadow-xs"
+                          title={`Cores disponíveis: ${validColors.map((c) => PRODUCT_COLOR_MAP[c]?.label).join(', ')}`}
+                        >
+                          {validColors.map((c) => {
+                            const color = PRODUCT_COLOR_MAP[c];
+                            if (!color) return null;
+                            return (
+                              <span
+                                key={c}
+                                className="w-4 h-4 rounded-xs shadow-2xs border border-black/25 inline-block transition-transform duration-150 hover:scale-125 cursor-pointer"
+                                style={{ backgroundColor: color.bg }}
+                                title={`Cor: ${color.label}`}
+                              />
+                            );
+                          })}
+                        </div>
+                      )}
+
+                      {/* Featured Badge */}
+                      {item.featured && (
+                        <div className="bg-[#f48120] text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-sm">
+                          Destaque
+                        </div>
+                      )}
+                    </div>
 
                   {/* Dimension pill overlay */}
                   <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-xs text-slate-900 text-xs font-mono font-bold px-2.5 py-1 rounded border border-slate-300/80 shadow-xs max-w-[55%] truncate">
@@ -409,7 +445,8 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
                 </button>
               </div>
             </div>
-          ))}
+          );
+        })}
         </div>
 
         {/* Empty state when search produces no results */}
