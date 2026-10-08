@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Search, CheckCircle2, ShieldCheck, Filter } from 'lucide-react';
-import { ProductVisual } from './ProductVisual';
+import { ProductVisual, getProductTag } from './ProductVisual';
 
 export interface ProductItem {
   id: string;
@@ -314,21 +314,28 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
                   />
 
                   {/* Category Badge */}
-                  <div className="absolute top-3 left-3 bg-[#0f1d2e]/90 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs">
+                  <div className="absolute top-3 left-3 z-10 bg-[#0f1d2e]/90 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-xs">
                     {item.category}
                   </div>
 
                   {/* Featured Badge */}
                   {item.featured && (
-                    <div className="absolute top-3 right-3 bg-[#f48120] text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-sm">
+                    <div className="absolute top-3 right-3 z-10 bg-[#f48120] text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-xs shadow-sm">
                       Destaque
                     </div>
                   )}
 
                   {/* Dimension pill overlay */}
-                  <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs text-slate-900 text-xs font-mono font-bold px-2.5 py-1 rounded border border-slate-300/80 shadow-xs">
+                  <div className="absolute bottom-3 left-3 z-10 bg-white/95 backdrop-blur-xs text-slate-900 text-xs font-mono font-bold px-2.5 py-1 rounded border border-slate-300/80 shadow-xs max-w-[55%] truncate">
                     {item.dimensoes}
                   </div>
+
+                  {/* Specification/Detail Tag overlay */}
+                  {getProductTag(item.name) && (
+                    <div className="absolute bottom-3 right-3 z-10 bg-white/95 backdrop-blur-xs text-slate-700 text-xs font-mono font-semibold px-2.5 py-1 rounded border border-slate-300/80 shadow-xs max-w-[45%] truncate">
+                      {getProductTag(item.name)}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Details */}
