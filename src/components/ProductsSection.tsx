@@ -5,227 +5,197 @@ import { ProductVisual } from './ProductVisual';
 export interface ProductItem {
   id: string;
   name: string;
-  category: 'Blocos' | 'Pisos' | 'Meio Fio - Guia' | 'Lajota';
+  category: 'Pisos' | 'Blocos' | 'Meio Fio - Guia';
   dimensoes: string;
-  resistencia: string;
-  consumo: string;
+  material: string;
+  embalagem: string;
+  cargaCompleta?: string;
+  consumo?: string;
   uso: string;
   cores?: string[];
   featured?: boolean;
 }
 
 export const CLIENT_PRODUCTS: ProductItem[] = [
-  // --- BLOCOS (5 produtos) ---
+  // --- PISOS INTERTRAVADOS RETANGULARES (6 produtos) ---
   {
-    id: "bloco-inteiro-m15",
-    name: "BLOCO INTEIRO M15",
-    category: "Blocos",
-    dimensoes: "14cm x 19cm x 39cm",
-    resistencia: "Classe M15 (Norma ABNT NBR 6136)",
-    consumo: "12,5 peças por m²",
-    uso: "Alvenaria estrutural e vedação de alta resistência para galpões, prédios e residências.",
-    cores: ["Cinza Natural"],
+    id: "piso-retangular-intertravado-4cm",
+    name: "PISO RETANGULAR INTERTRAVADO 4CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 4 cm",
+    embalagem: "20 m² por palete",
+    cargaCompleta: "160 m²",
+    consumo: "50 peças por m²",
+    uso: "Pavimentação intertravada para calçadas residenciais, passeios públicos, praças e áreas de tráfego exclusivo de pedestres.",
+    cores: ["Cinza natural"],
     featured: true,
   },
   {
-    id: "bloco-inteiro-m10",
-    name: "BLOCO INTEIRO M10",
-    category: "Blocos",
-    dimensoes: "9cm x 19cm x 39cm",
-    resistencia: "Classe M10 (Norma ABNT NBR 6136)",
-    consumo: "12,5 peças por m²",
-    uso: "Vedação e paredes divisórias internas, reduzindo espessura e aumentando área útil.",
-    cores: ["Cinza Natural"],
+    id: "piso-retangular-intertravado-colorido-4cm",
+    name: "PISO RETANGULAR INTERTRAVADO COLORIDO 4CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 4 cm",
+    embalagem: "20 m² por palete",
+    cargaCompleta: "160 m²",
+    consumo: "50 peças por m²",
+    uso: "Ideal para demarcações visuais, faixas de travessia, ciclovias e paginações arquitetônicas decorativas com cores vivas e duráveis.",
+    cores: ["Grafite", "Amarelo", "Vermelho"],
   },
   {
-    id: "meio-bloco-m10",
-    name: "MEIO BLOCO M10",
-    category: "Blocos",
-    dimensoes: "14cm x 19cm x 19cm",
-    resistencia: "Classe M10 / M15",
-    consumo: "Peça modular de compensação",
-    uso: "Arremates e modulação precisa de vãos de portas e janelas sem necessidade de quebra.",
-    cores: ["Cinza Natural"],
+    id: "piso-retangular-intertravado-6cm",
+    name: "PISO RETANGULAR INTERTRAVADO 6CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 6 cm",
+    embalagem: "16 m² por palete",
+    cargaCompleta: "128 m²",
+    consumo: "50 peças por m²",
+    uso: "Indicado para garagens residenciais, estacionamentos comerciais, vias urbanas e tráfego leve e médio de veículos.",
+    cores: ["Cinza natural"],
+    featured: true,
   },
   {
-    id: "calha-m15-33",
-    name: "CALHA M15",
-    category: "Blocos",
-    dimensoes: "14cm x 19cm x 33cm",
-    resistencia: "Conforme norma ABNT NBR 6136",
-    consumo: "3,0 peças por metro linear",
-    uso: "Bloco canaleta em U para canalização de armaduras, vergas, contravergas e cintas de amarração.",
-    cores: ["Cinza Natural"],
+    id: "piso-retangular-intertravado-colorido-6cm",
+    name: "PISO RETANGULAR INTERTRAVADO COLORIDO 6CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 6 cm",
+    embalagem: "16 m² por palete",
+    cargaCompleta: "128 m²",
+    consumo: "50 peças por m²",
+    uso: "Pigmentação homogênea de alto padrão para condomínios, calçadões e acessos veiculares com impacto estético e segurança.",
+    cores: ["Grafite", "Amarelo", "Vermelho"],
   },
   {
-    id: "calha-m15-29",
-    name: "CALHA M15",
-    category: "Blocos",
-    dimensoes: "09cm x 19cm x 29cm",
-    resistencia: "Conforme norma ABNT NBR 6136",
-    consumo: "3,4 peças por metro linear",
-    uso: "Canaleta estreita de 9cm para respaldo e vigas de amarração em paredes esbeltas.",
-    cores: ["Cinza Natural"],
+    id: "piso-retangular-intertravado-8cm",
+    name: "PISO RETANGULAR INTERTRAVADO 8CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 8 cm",
+    embalagem: "12,5 m² por palete",
+    cargaCompleta: "160 m²",
+    consumo: "50 peças por m²",
+    uso: "Pavimento de alta resistência mecânica para vias públicas de tráfego pesado, postos de combustíveis, ônibus e caminhões.",
+    cores: ["Natural", "Cinza natural"],
+    featured: true,
+  },
+  {
+    id: "piso-retangular-intertravado-10cm",
+    name: "PISO RETANGULAR INTERTRAVADO 10CM",
+    category: "Pisos",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 10 cm",
+    embalagem: "10 m² por palete",
+    cargaCompleta: "80 m²",
+    consumo: "50 peças por m²",
+    uso: "Projetado para tráfego extrapesado e alta tonelagem contínua: portos, terminais de contêineres, carretas e indústrias pesadas.",
+    cores: ["Natural", "Grafite", "Amarelo", "Vermelho"],
   },
 
-  // --- PISOS (7 produtos) ---
+  // --- PISOS ESPECIAIS: DRENANTE, GRAMA E SEXTAVADO (3 produtos) ---
   {
-    id: "paver-intertravado-06cm",
-    name: "PAVER INTERTRAVADO",
+    id: "piso-intertravado-drenante-6cm",
+    name: "PISO INTERTRAVADO DRENANTE 6CM",
     category: "Pisos",
-    dimensoes: "20cm x 10cm x 06cm",
-    resistencia: "35 MPa (Norma ABNT NBR 9781)",
+    material: "Concreto",
+    dimensoes: "10 cm x 20 cm x 6 cm",
+    embalagem: "16 m² por palete",
+    cargaCompleta: "128 m²",
     consumo: "50 peças por m²",
-    uso: "Calçadas, garagens residenciais, áreas comerciais e tráfego veicular leve.",
-    cores: ["Natural", "Grafite", "Vermelho", "Amarelo"],
+    uso: "Pavimento 100% permeável e ecológico que infiltra a água de chuva no lençol freático, prevenindo poças e alagamentos.",
+    cores: ["Cinza natural", "Grafite"],
     featured: true,
   },
   {
-    id: "paver-intertravado-08cm",
-    name: "PAVER INTERTRAVADO",
+    id: "piso-grama-16-faces",
+    name: "PISO GRAMA 16 FACES",
     category: "Pisos",
-    dimensoes: "20cm x 10cm x 08cm",
-    resistencia: "35 MPa a 50 MPa",
-    consumo: "50 peças por m²",
-    uso: "Vias urbanas, pátios de carretas, postos de combustíveis e tráfego pesado.",
-    cores: ["Natural", "Grafite", "Vermelho", "Amarelo"],
+    material: "Concreto",
+    dimensoes: "36 cm x 18 cm x 6 cm",
+    embalagem: "15 m² por palete",
+    consumo: "15 peças por m²",
+    uso: "Bloco vazado ecológico que integra pavimentação e gramado natural, ideal para garagens verdes, quintais e estacionamentos.",
+    cores: ["Cinza natural"],
     featured: true,
   },
   {
-    id: "paver-intertravado-04cm",
-    name: "PAVER INTERTRAVADO",
+    id: "piso-concreto-sextavado",
+    name: "PISO DE CONCRETO SEXTAVADO",
     category: "Pisos",
-    dimensoes: "20cm x 10cm x 04cm",
-    resistencia: "35 MPa",
-    consumo: "50 peças por m²",
-    uso: "Passeios públicos, calçadas de condomínio, praças e áreas exclusivas de pedestres.",
-    cores: ["Natural", "Grafite", "Vermelho", "Amarelo"],
-  },
-  {
-    id: "paver-interface-06cm",
-    name: "PAVER INTERFACE (16 FACES / ONDA)",
-    category: "Pisos",
-    dimensoes: "Espessura 06cm",
-    resistencia: "35 MPa / 50 MPa",
-    consumo: "35 peças por m²",
-    uso: "Pisos industriais e estacionamentos com máxima retenção e travamento lateral multidirecional.",
-    cores: ["Natural", "Vermelho", "Grafite"],
-  },
-  {
-    id: "piso-drenante-06cm",
-    name: "PISO DRENANTE - PERMEÁVEL",
-    category: "Pisos",
-    dimensoes: "20cm x 10cm x 06cm",
-    resistencia: "Matriz porosa drenante",
-    consumo: "50 peças por m²",
-    uso: "Solução sustentável: infiltra 100% da água da chuva no solo, evitando poças e enchentes.",
-    cores: ["Cinza Natural"],
-  },
-  {
-    id: "piso-drenante-08cm",
-    name: "PISO DRENANTE - PERMEÁVEL",
-    category: "Pisos",
-    dimensoes: "20cm x 10cm x 08cm",
-    resistencia: "Matriz porosa drenante reforçada",
-    consumo: "50 peças por m²",
-    uso: "Estacionamentos ecológicos com veículos em movimento e exigência de coeficiente permeável.",
-    cores: ["Cinza Natural"],
-  },
-  {
-    id: "piso-sextavado-8cm",
-    name: "PISO SEXTAVADO 8CM",
-    category: "Pisos",
-    dimensoes: "25cm x 08cm",
-    resistencia: "35 MPa",
-    consumo: "19 peças por m²",
-    uso: "Loteamentos fechados, ruas municipais, pátios rurais e grandes praças.",
-    cores: ["Natural", "Vermelho"],
-  },
-
-  // --- MEIO FIO - GUIA (2 produtos) ---
-  {
-    id: "meio-fio-guia-padrao",
-    name: "MEIO FIO - GUIA",
-    category: "Meio Fio - Guia",
-    dimensoes: "100cm x 30cm x 13cm x 10cm",
-    resistencia: "25 MPa a 35 MPa",
-    consumo: "1 peça por metro linear",
-    uso: "Guia de concreto com chanfro de acabamento para retenção e contenção do pavimento intertravado.",
-    cores: ["Cinza Concreto"],
-    featured: true,
-  },
-  {
-    id: "meio-fio-guia-leve",
-    name: "MEIO FIO - GUIA",
-    category: "Meio Fio - Guia",
-    dimensoes: "100cm x 30cm x 08cm x 05cm",
-    resistencia: "25 MPa",
-    consumo: "1 peça por metro linear",
-    uso: "Guia de jardim, delimitação de canteiros, ciclovias e calçadas internas residenciais.",
-    cores: ["Cinza Concreto"],
-  },
-
-  // --- LAJOTA (6 produtos) ---
-  {
-    id: "lajota-copacabana",
-    name: "LAJOTA COPACABANA",
-    category: "Lajota",
-    dimensoes: "50cm x 50cm x 2cm",
-    resistencia: "Alta resistência e acabamento nobre",
-    consumo: "4 peças por m²",
-    uso: "Calçadas decorativas com o tradicional traçado ondulado no estilo calçadão de Copacabana.",
-    cores: ["Cinza e Preto / Branco"],
-    featured: true,
-  },
-  {
-    id: "lajota-tatil-alerta-25",
-    name: "LAJOTA PISO TÁTIL ALERTA",
-    category: "Lajota",
-    dimensoes: "25cm x 25cm x 2cm",
-    resistencia: "Norma ABNT NBR 16537",
+    material: "Concreto",
+    dimensoes: "24 cm x 24 cm x 8 cm",
+    embalagem: "10 m² por palete",
     consumo: "16 peças por m²",
-    uso: "Placa com semiesferas em relevo para sinalizar rebaixos, semáforos, portas e obstáculos.",
-    cores: ["Natural", "Amarelo", "Vermelho"],
+    uso: "Pavimento hexagonal clássico de alta durabilidade e intertravamento lateral para pátios de manobra, vias rurais e loteamentos.",
+    cores: ["Cinza natural", "Colorido sob consulta"],
+  },
+
+  // --- BLOCOS ESTRUTURAIS (2 produtos) ---
+  {
+    id: "bloco-estrutural-9cm",
+    name: "BLOCO ESTRUTURAL 9CM",
+    category: "Blocos",
+    material: "Concreto",
+    dimensoes: "19 cm x 39 cm x 9 cm",
+    embalagem: "130 por palete",
+    cargaCompleta: "1040 blocos",
+    consumo: "12,5 peças por m²",
+    uso: "Alvenaria racionalizada e paredes divisórias internas com espessura otimizada, excelente acabamento e economia de argamassa.",
+    cores: ["Cinza natural"],
   },
   {
-    id: "lajota-tatil-alerta-20",
-    name: "LAJOTA PISO TÁTIL ALERTA",
-    category: "Lajota",
-    dimensoes: "20cm x 20cm x 2cm",
-    resistencia: "Norma ABNT NBR 16537",
-    consumo: "25 peças por m²",
-    uso: "Piso tátil de alerta formato 20x20cm para calçadas públicas acessíveis e entradas comerciais.",
-    cores: ["Natural", "Amarelo"],
+    id: "bloco-estrutural-14cm",
+    name: "BLOCO ESTRUTURAL 14CM",
+    category: "Blocos",
+    material: "Concreto",
+    dimensoes: "14 cm x 19 cm x 39 cm",
+    embalagem: "90 por palete",
+    cargaCompleta: "720 blocos",
+    consumo: "12,5 peças por m²",
+    uso: "Bloco estrutural portante de alta densidade e resistência para galpões, prédios residenciais, comerciais e muros estruturais.",
+    cores: ["Cinza natural"],
+    featured: true,
+  },
+
+  // --- MEIO FIO - GUIA (3 produtos) ---
+  {
+    id: "meio-fio-jardim",
+    name: "MEIO FIO (JARDIM)",
+    category: "Meio Fio - Guia",
+    material: "Concreto",
+    dimensoes: "100 cm x 30 cm x 8 cm x 6 cm",
+    embalagem: "36 por palete",
+    cargaCompleta: "288 m",
+    consumo: "1 peça por metro linear",
+    uso: "Guia pré-moldada leve para delimitação de canteiros, jardins, passeios internos, ciclovias e áreas de convivência.",
+    cores: ["Cinza natural"],
   },
   {
-    id: "lajota-tatil-direcional-25",
-    name: "LAJOTA TÁTIL DIRECIONAL",
-    category: "Lajota",
-    dimensoes: "25cm x 25cm x 2cm",
-    resistencia: "Norma ABNT NBR 16537",
-    consumo: "16 peças por m²",
-    uso: "Relevos lineares longitudinais que direcionam o percurso seguro e autônomo do pedestre.",
-    cores: ["Natural", "Amarelo", "Vermelho"],
+    id: "meio-fio-guia",
+    name: "MEIO FIO GUIA",
+    category: "Meio Fio - Guia",
+    material: "Concreto",
+    dimensoes: "100 cm x 30 cm x 13 cm x 11 cm",
+    embalagem: "24 m por palete",
+    cargaCompleta: "192 m",
+    consumo: "1 peça por metro linear",
+    uso: "Guia padrão para contenção de pavimentação asfáltica e pisos intertravados em vias urbanas, avenidas e loteamentos.",
+    cores: ["Cinza natural"],
+    featured: true,
   },
   {
-    id: "lajota-piso-rampa",
-    name: "LAJOTA PISO RAMPA",
-    category: "Lajota",
-    dimensoes: "45cm x 45cm x 2cm",
-    resistencia: "Antiderrapante de alta aderência",
-    consumo: "5 peças por m²",
-    uso: "Superfície ranhurada com frisos antiderrapantes para rampas de veículos e pedestres.",
-    cores: ["Cinza Natural"],
-  },
-  {
-    id: "lajota-tatil-direcional-20",
-    name: "LAJOTA TÁTIL DIRECIONAL",
-    category: "Lajota",
-    dimensoes: "20cm x 20cm x 2cm",
-    resistencia: "Norma ABNT NBR 16537",
-    consumo: "25 peças por m²",
-    uso: "Piso tátil direcional 20x20cm para sinalização de rotas contínuas em espaços urbanos.",
-    cores: ["Natural", "Amarelo"],
+    id: "meio-fio-denit",
+    name: "MEIO FIO DENIT",
+    category: "Meio Fio - Guia",
+    material: "Concreto",
+    dimensoes: "100 cm x 30 cm x 15 cm x 13 cm",
+    embalagem: "24 m por palete",
+    cargaCompleta: "192 m",
+    consumo: "1 peça por metro linear",
+    uso: "Guia de alta robustez com geometria oficial padrão DNIT para rodovias, acessos expressos e vias de tráfego pesado.",
+    cores: ["Cinza natural"],
   },
 ];
 
@@ -239,10 +209,9 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
 
   const categories = [
     { id: 'todos', label: 'Todos os Produtos', count: CLIENT_PRODUCTS.length },
-    { id: 'Pisos', label: 'Pisos', count: CLIENT_PRODUCTS.filter(p => p.category === 'Pisos').length },
-    { id: 'Blocos', label: 'Blocos', count: CLIENT_PRODUCTS.filter(p => p.category === 'Blocos').length },
-    { id: 'Meio Fio - Guia', label: 'Meio Fio - Guia', count: CLIENT_PRODUCTS.filter(p => p.category === 'Meio Fio - Guia').length },
-    { id: 'Lajota', label: 'Lajota', count: CLIENT_PRODUCTS.filter(p => p.category === 'Lajota').length },
+    { id: 'Pisos', label: 'Pisos Intertravados', count: CLIENT_PRODUCTS.filter(p => p.category === 'Pisos').length },
+    { id: 'Blocos', label: 'Blocos Estruturais', count: CLIENT_PRODUCTS.filter(p => p.category === 'Blocos').length },
+    { id: 'Meio Fio - Guia', label: 'Meio Fio / Guias', count: CLIENT_PRODUCTS.filter(p => p.category === 'Meio Fio - Guia').length },
   ];
 
   const filteredProducts = CLIENT_PRODUCTS.filter((product) => {
@@ -268,7 +237,7 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
             Nossos Produtos em Pré-Moldados
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
-            Linha completa de blocos, pisos intertravados, meio-fio e lajotas produzidos com padrão industrial e normas ABNT.
+            Conheça nossos produtos de alta qualidade e o melhor custo-benefício da Paraíba. Linha completa de pisos intertravados, blocos e meio-fio.
           </p>
         </div>
 
@@ -377,23 +346,37 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
                   {/* Technical Specifications */}
                   <div className="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs">
                     <div className="flex justify-between items-center text-slate-700">
+                      <span className="font-semibold text-slate-500">Material:</span>
+                      <span className="font-medium text-slate-800">{item.material}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-slate-700">
                       <span className="font-semibold text-slate-500">Dimensões:</span>
                       <span className="font-bold text-[#0f1d2e] font-mono">{item.dimensoes}</span>
                     </div>
-                    <div className="flex justify-between items-center text-slate-700">
-                      <span className="font-semibold text-slate-500">Resistência:</span>
-                      <span className="font-semibold text-slate-800">{item.resistencia}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-slate-700">
-                      <span className="font-semibold text-slate-500">Rendimento:</span>
-                      <span className="text-slate-800 font-medium">{item.consumo}</span>
-                    </div>
+                    {item.embalagem && (
+                      <div className="flex justify-between items-center text-slate-700">
+                        <span className="font-semibold text-slate-500">Embalagem:</span>
+                        <span className="font-medium text-slate-800">{item.embalagem}</span>
+                      </div>
+                    )}
+                    {item.cargaCompleta && (
+                      <div className="flex justify-between items-center text-slate-700">
+                        <span className="font-semibold text-slate-500">Carga completa:</span>
+                        <span className="font-medium text-slate-800">{item.cargaCompleta}</span>
+                      </div>
+                    )}
+                    {item.consumo && (
+                      <div className="flex justify-between items-center text-slate-700">
+                        <span className="font-semibold text-slate-500">Rendimento:</span>
+                        <span className="text-slate-800 font-medium">{item.consumo}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Available colors */}
                   {item.cores && item.cores.length > 0 && (
                     <div className="mt-4 flex items-center gap-1.5 flex-wrap">
-                      <span className="text-[11px] font-semibold text-slate-400 mr-1">Cores:</span>
+                      <span className="text-[11px] font-semibold text-slate-400 mr-1">Cor:</span>
                       {item.cores.map((cor) => (
                         <span 
                           key={cor} 
@@ -426,7 +409,7 @@ export function ProductsSection({ onSelectProduct }: ProductsSectionProps) {
         {filteredProducts.length === 0 && (
           <div className="text-center py-16 bg-white rounded-lg border border-slate-200 p-8">
             <p className="text-base font-bold text-slate-700">Nenhum produto encontrado para "{searchTerm}"</p>
-            <p className="text-xs text-slate-500 mt-1">Tente pesquisar por termos como "paver", "bloco", "guia", "tátil" ou "copacabana".</p>
+            <p className="text-xs text-slate-500 mt-1">Tente pesquisar por termos como "paver", "bloco", "drenante", "meio fio" ou "sextavado".</p>
             <button
               onClick={() => { setSearchTerm(''); setSelectedCategory('todos'); }}
               className="mt-4 px-4 py-2 bg-[#0f1d2e] text-white text-xs font-bold rounded uppercase"

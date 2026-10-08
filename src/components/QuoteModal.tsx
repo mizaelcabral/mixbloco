@@ -13,8 +13,8 @@ interface QuoteModalProps {
 export function QuoteModal({ 
   isOpen, 
   onClose, 
-  initialProduct = "PAVER INTERTRAVADO",
-  initialDimensions = "20cm x 10cm x 06cm"
+  initialProduct = "PISO RETANGULAR INTERTRAVADO 6CM",
+  initialDimensions = "10 cm x 20 cm x 6 cm"
 }: QuoteModalProps) {
   const [selectedProductId, setSelectedProductId] = useState<string>("");
   const [area, setArea] = useState<number | string>(100);
@@ -35,7 +35,7 @@ export function QuoteModal({
       if (match) {
         setSelectedProductId(match.id);
       } else {
-        setSelectedProductId(CLIENT_PRODUCTS[5]?.id || CLIENT_PRODUCTS[0].id);
+        setSelectedProductId(CLIENT_PRODUCTS[0]?.id || "");
       }
       setSubmitted(false);
     }
@@ -48,19 +48,16 @@ export function QuoteModal({
 
   // Calculate pieces from consumption string
   let rate = 50;
-  if (currentProduct.consumo.includes("12,5")) rate = 12.5;
-  else if (currentProduct.consumo.includes("35")) rate = 35;
-  else if (currentProduct.consumo.includes("19")) rate = 19;
-  else if (currentProduct.consumo.includes("16")) rate = 16;
-  else if (currentProduct.consumo.includes("25")) rate = 25;
-  else if (currentProduct.consumo.includes("4")) rate = 4;
-  else if (currentProduct.consumo.includes("5")) rate = 5;
-  else if (currentProduct.consumo.includes("1 peça")) rate = 1;
-  else if (currentProduct.consumo.includes("3,0")) rate = 3;
-  else if (currentProduct.consumo.includes("3,4")) rate = 3.4;
+  if (currentProduct.consumo) {
+    if (currentProduct.consumo.includes("12,5")) rate = 12.5;
+    else if (currentProduct.consumo.includes("15")) rate = 15;
+    else if (currentProduct.consumo.includes("16")) rate = 16;
+    else if (currentProduct.consumo.includes("1 peça")) rate = 1;
+    else if (currentProduct.consumo.includes("50")) rate = 50;
+  }
 
   const estimatedPieces = Math.round(numArea * rate);
-  const isLinear = currentProduct.category === 'Meio Fio - Guia' || currentProduct.name.includes('CALHA');
+  const isLinear = currentProduct.category === 'Meio Fio - Guia';
 
   const handleSendWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
@@ -161,13 +158,6 @@ export function QuoteModal({
                 </optgroup>
                 <optgroup label="MEIO FIO - GUIA">
                   {CLIENT_PRODUCTS.filter(p => p.category === 'Meio Fio - Guia').map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name} - {p.dimensoes}
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="LAJOTA">
-                  {CLIENT_PRODUCTS.filter(p => p.category === 'Lajota').map((p) => (
                     <option key={p.id} value={p.id}>
                       {p.name} - {p.dimensoes}
                     </option>

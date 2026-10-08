@@ -14,13 +14,15 @@ export function CalculatorSection({ onQuoteWithCalc }: CalculatorSectionProps) {
   const [trafficType, setTrafficType] = useState('leve');
 
   const paverOptions: Record<string, { name: string; pcsM2: number; defaultThick: string }> = {
-    holandes06: { name: "Paver Intertravado 20x10x06cm", pcsM2: 50, defaultThick: "6 cm" },
-    holandes08: { name: "Paver Intertravado 20x10x08cm", pcsM2: 50, defaultThick: "8 cm" },
-    interface06: { name: "Paver Interface (16 Faces)", pcsM2: 35, defaultThick: "6 cm" },
-    drenante: { name: "Piso Drenante Permeável", pcsM2: 50, defaultThick: "6 cm" },
-    sextavado: { name: "Piso Sextavado 8cm (25x08cm)", pcsM2: 19, defaultThick: "8 cm" },
-    blocoM15: { name: "Bloco Inteiro M15 (14x19x39cm)", pcsM2: 12.5, defaultThick: "14 cm" },
-    copacabana: { name: "Lajota Copacabana (50x50x2cm)", pcsM2: 4, defaultThick: "2 cm" },
+    holandes04: { name: "Piso Retangular 4cm (10x20cm)", pcsM2: 50, defaultThick: "4 cm" },
+    holandes06: { name: "Piso Retangular 6cm (10x20cm)", pcsM2: 50, defaultThick: "6 cm" },
+    holandes08: { name: "Piso Retangular 8cm (10x20cm)", pcsM2: 50, defaultThick: "8 cm" },
+    holandes10: { name: "Piso Retangular 10cm (10x20cm)", pcsM2: 50, defaultThick: "10 cm" },
+    drenante: { name: "Piso Drenante Permeável 6cm", pcsM2: 50, defaultThick: "6 cm" },
+    grama: { name: "Piso Grama 16 Faces (36x18x6cm)", pcsM2: 15, defaultThick: "6 cm" },
+    sextavado: { name: "Piso Sextavado 8cm (24x24cm)", pcsM2: 16, defaultThick: "8 cm" },
+    bloco09: { name: "Bloco Estrutural 9cm (9x19x39cm)", pcsM2: 12.5, defaultThick: "9 cm" },
+    bloco14: { name: "Bloco Estrutural 14cm (14x19x39cm)", pcsM2: 12.5, defaultThick: "14 cm" },
   };
 
   const calculatedM2 = calcType === 'dimensions' 

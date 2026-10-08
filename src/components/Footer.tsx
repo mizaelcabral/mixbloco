@@ -117,22 +117,25 @@ export function Footer({ onOpenQuote }: FooterProps) {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-400">
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Pisos (Intertravados, Drenantes, Sextavado)</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Pisos Intertravados (4cm, 6cm, 8cm e 10cm)</a>
               </li>
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Blocos (M15, M10, Meio Bloco, Calhas)</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Pisos Intertravados Coloridos</a>
               </li>
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Meio Fio - Guia (100x30x13x10cm e 8x5cm)</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Piso Drenante Permeável 6cm</a>
               </li>
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Lajota Copacabana (50x50x2cm)</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Piso Grama 16 Faces</a>
               </li>
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Lajotas Táteis Alerta e Direcional</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Piso de Concreto Sextavado</a>
               </li>
               <li>
-                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Lajota Piso Rampa Antiderrapante</a>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Blocos Estruturais (9cm e 14cm)</a>
+              </li>
+              <li>
+                <a href="#produtos" className="hover:text-[#f48120] transition-colors">Meio Fio (Jardim, Guia e Denit)</a>
               </li>
             </ul>
           </div>
