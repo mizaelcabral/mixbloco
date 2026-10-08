@@ -41,12 +41,12 @@ export function ProductVisual({ id, name, category, dimensoes }: ProductVisualPr
   }
 
   return (
-    <div className="w-full h-full bg-gradient-to-b from-[#f8fafc] to-[#eef2f6] flex items-center justify-center relative overflow-hidden">
+    <div className="w-full h-full bg-slate-100 relative overflow-hidden">
       <img
         src={imageSrc}
         alt={name}
         onError={() => setHasError(true)}
-        className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-300 ease-out select-none"
+        className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300 ease-out select-none"
         loading="lazy"
       />
     </div>
